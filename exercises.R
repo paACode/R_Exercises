@@ -40,19 +40,67 @@
 #-------------------------------------------------------------------------------
 #Definition Standard Deviation and Variance
 
-weight <- c(60, 72, 57, 90, 95, 72)
-weight_mean <- mean(weight)
-
-diff_weight <- weight-weight_mean 
-
-std_deviation = sqrt((sum(diff_weight^2))/(length(weight)-1))
-round(std_deviation,5) == round(sd(weight),5)
-
-
-variance = sum(diff_weight^2)/(length(weight)-1)
-round(variance,5) == round(var(weight),5)
+# weight <- c(60, 72, 57, 90, 95, 72)
+# weight_mean <- mean(weight)
+# 
+# diff_weight <- weight-weight_mean 
+# 
+# std_deviation = sqrt((sum(diff_weight^2))/(length(weight)-1))
+# round(std_deviation,5) == round(sd(weight),5)
+# 
+# 
+# variance = sum(diff_weight^2)/(length(weight)-1)
+# round(variance,5) == round(var(weight),5)
 #-------------------------------------------------------------------------------
+#Exercise 8.3
+winner    <- c(191, 185, 185, 182, 182, 188, 188, 188, 185, 185, 177,
+            182, 182, 193, 183, 179, 179, 175)
+opponent  <- c(165, 187, 175, 193, 185, 187, 188, 173, 180, 177, 183,
+              185, 180, 180, 182, 178, 178, 173)
+
+length(winner) == length(opponent)
+
+winner[6:10]
+winner[c(3,5,10:12)]
+
+winner
+winner[c(6,7)] <- 189
+winner
+
+mean(winner)>mean(opponent)
+diff_average = mean(winner)-mean(opponent)
+diff_average
+
+var(winner) == (sum((winner-mean(winner))^2))/(length(winner)-1)
+sd(winner) == sqrt((sum((winner-mean(winner))^2))/(length(winner)-1))
+
+y = seq(2016,1948, by=-4)
+
+x <- c(4, 10, 3, NA, NA, 1, 8)
+mean(x) #We cannot take a mean of Not availabel elemtns
+mean(x, na.rm=TRUE)
+
+sort(x) #Removes NA elements from vector
+sort(x, na.last = TRUE) 
+sort(x, decreasing = T) #Changes order
+order(x) # Keeps NA Elements (highest index)
 
 
+x <- c(4, 2, 8, 9, 7, 5, 2, 1)
+plot(x)
 
+plot(x,
+     type = "l",
+     col = "blue",
+     lty = 2,
+     main = "main title",
+     xlab = "A few numbers",
+     ylab = "other numbers",
+     xlim = c(0,10),
+     ylim = c(0,10))
+
+abline(v=3, col="green")
+abline(h=4, col="red", lty=2)
+abline(a=1,b=2)
+#-------------------------------------------------------------------------------
 
