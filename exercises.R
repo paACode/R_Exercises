@@ -104,3 +104,6 @@
 # abline(a=1,b=2)
 #-------------------------------------------------------------------------------
 
+
+temp <- read.csv("C:/Users/acker/Documents/R_Workspace/R_Exercises/weather.csv")
+
