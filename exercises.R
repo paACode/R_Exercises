@@ -105,5 +105,8 @@
 #-------------------------------------------------------------------------------
 
 
-temp <- read.csv("C:/Users/acker/Documents/R_Workspace/R_Exercises/weather.csv")
+data <- read.csv("C:/Users/acker/Documents/R_Workspace/R_Exercises/weather.csv")
+data[2,3] #2nd row, 3rd column
+data[4, ]
+data[,c("Luzern","Zurich")]
 
