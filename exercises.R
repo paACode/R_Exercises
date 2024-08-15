@@ -104,9 +104,20 @@
 # abline(a=1,b=2)
 #-------------------------------------------------------------------------------
 
-
+#Exercise 9.1 
 data <- read.csv("C:/Users/acker/Documents/R_Workspace/R_Exercises/weather.csv")
 data[2,3] #2nd row, 3rd column
 data[4, ]
-data[,c("Luzern","Zurich")]
+data1 <- data[,c("Luzern","Zurich")]
+write.csv(data1, file = "C:/Users/acker/Documents/R_Workspace/R_Exercises/weather2.csv")
+col_name_3rd <- colnames(data)[3]
+col_name_3rd
+colnames(data)[2] <- "Geneva"
+
+# order sorts all entries from column zurich
+# Returnd the indexes and uses this indexes to also sort the other entries
+# accordingly to zurich order
+data3 <- data[order(data[, "Zurich"]), ]
+
+
 
