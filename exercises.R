@@ -105,19 +105,48 @@
 #-------------------------------------------------------------------------------
 
 #Exercise 9.1 
-data <- read.csv("C:/Users/acker/Documents/R_Workspace/R_Exercises/weather.csv")
-data[2,3] #2nd row, 3rd column
-data[4, ]
-data1 <- data[,c("Luzern","Zurich")]
-write.csv(data1, file = "C:/Users/acker/Documents/R_Workspace/R_Exercises/weather2.csv")
-col_name_3rd <- colnames(data)[3]
-col_name_3rd
-colnames(data)[2] <- "Geneva"
+# data <- read.csv("C:/Users/acker/Documents/R_Workspace/R_Exercises/weather.csv")
+# data[2,3] #2nd row, 3rd column
+# data[4, ]
+# data1 <- data[,c("Luzern","Zurich")]
+# write.csv(data1, file = "C:/Users/acker/Documents/R_Workspace/R_Exercises/weather2.csv")
+# col_name_3rd <- colnames(data)[3]
+# col_name_3rd
+# colnames(data)[2] <- "Geneva"
+# 
+# # order sorts all entries from column zurich
+# # Returnd the indexes and uses this indexes to also sort the other entries
+# # accordingly to zurich order
+# data3 <- data[order(data[, "Zurich"]), ]
 
-# order sorts all entries from column zurich
-# Returnd the indexes and uses this indexes to also sort the other entries
-# accordingly to zurich order
-data3 <- data[order(data[, "Zurich"]), ]
+#-------------------------------------------------------------------------------
+
+#Exercise 9.2 
+
+setwd("C:/Users/acker/Documents/R_Workspace/")
+d.fuel <- read.table(file = "R_Exercises/d.fuel.dat", header=T, sep = ",")
+d.fuel[5,]
+d.fuel[c(1:5),]
+d.fuel[c(1:3, 57:60),]
+
+mpg_mean <-mean(d.fuel[, "mpg"])
+mpg_mean
+mpg_mean_7_to_22 <- mean(d.fuel[c(7:22),"mpg"])
+mpg_mean_7_to_22
+
+t.kml = d.fuel[, "mpg"] * 1.6093 / 3.789
+t.kg = d.fuel [, "weight"] * 0.45359
+
+mean(t.kml)
+mean(t.kg)
+
+consumption_mean_per_100km <- 1/mean(t.kml) *100
+consumption_mean_per_100km
+
+consumption_median_per_100km <- 1/median(t.kml) *100
+consumption_median_per_100km 
+
+
 
 
 
